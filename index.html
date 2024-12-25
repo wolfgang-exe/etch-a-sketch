@@ -7,8 +7,17 @@
     <title>Etch-a-Sketch</title>
 </head>
 <body>
+    <div id="board-container">
+        <div id="board">
+
+        </div>
+    </div>
     <div id="size-container">
-        <form>
+        <div>
+            <label for="colors">Colors: </label>
+            <input type="color" name="color" id="color" oninput="updateColor()">
+        </div>
+        <div id="size">
             <label for="grid-size">Grid Size: </label>
             <label for="grid-value" id="grid-value">16x16</label>
             <input type="range" name="grid-size" id="grid-size" 
@@ -16,15 +25,8 @@
                 oninput="updateGridLabel()"
                 onchange="updateGridSize()"
             />
-        </form>
-    </div>
-
-    <div id="board-container">
-        <div id="board">
-
         </div>
     </div>
-    
     <script src="script.js"></script>
 </body>
 </html>

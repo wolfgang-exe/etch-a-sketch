@@ -3,8 +3,10 @@ const styleSheets = document.styleSheets;
 const board = document.getElementById('board');
 const gridLabel = document.getElementById('grid-value');
 const gridSlider = document.getElementById('grid-size');
-
+const colorInput = document.getElementById('color');
+let color = 'black';
 let size = 16;
+
 createBoard(size);
 
 // create etch-a-sketch board
@@ -39,8 +41,7 @@ function createBoard(size)
     }
 
     // add mouseover even listeners
-    let allBoxElements = document.querySelectorAll('.box');
-    addMouseOver(allBoxElements);
+    addMouseOver();
 }
 
 // add border to board boxes if necessary
@@ -59,14 +60,13 @@ function addBorder(boxElement, i, k, size)
         boxElement.classList.add("left-border");
 }
 
-
-
 // add event listeners to each box
-function addMouseOver(allBoxElements)
+function addMouseOver()
 {
+    let allBoxElements = document.querySelectorAll('.box');
     allBoxElements.forEach((box) => {
         box.addEventListener("mouseover", (box) => {
-            box.target.style.backgroundColor = 'green';
+            box.target.style.backgroundColor = color;
         });
     });
 }
@@ -82,4 +82,10 @@ function updateGridSize()
 {
     board.innerHTML = ``;
     createBoard(parseInt(gridSlider.value));
+}
+
+// change color
+function updateColor()
+{
+    color = colorInput.value;
 }
