@@ -1,10 +1,16 @@
-#board 
+label, input {display: block;}
+#board-container
 {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+}
+
+#board 
+{
+    height: 576px;
+    width: 576px;
 }
 
 .row-container
@@ -14,10 +20,9 @@
 
 .box 
 {
-    height: 8px;
-    width: 8px;
+    height: 36px;
+    width: 36px;
 }
-
 
 /* for JS border creation */
 .top-border
@@ -35,4 +40,9 @@
 .bottom-border
 {
     border-bottom: 3px solid black;
+}
+
+#size-container 
+{
+    margin-bottom: 2rem;
 }
